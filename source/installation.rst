@@ -95,39 +95,16 @@ For Python 3, make sure you check **Add Python 3.x to PATH** during the installa
 
 *Don’t forget to add the Python executable to your PATH (so that you can run commands with it)*
 
-Then, only if you are on Windows 10 Home, Windows 8 (any version) or Windows 7 (any version), install:
-
-* Docker Toolbox: https://github.com/docker/toolbox/releases/download/v18.09.3/DockerToolbox-18.09.3.exe
-
 If you are on Windows 10 Professional or a newer version, you should install instead:
 
-* Docker for Windows: https://download.docker.com/win/stable/Docker%20for%20Windows%20Installer.exe
-
-Please do **NOT** install both docker programs. They are different and will create a mess if they are both installed.
+* Docker for Windows: https://www.docker.com/products/docker-desktop/
 
 After installing docker, launch it from the Desktop icon that is created from the installation (**Docker Quickstart** in the case of Docker Toolbox, **Docker for Windows** for Docker for Windows). This is important, do not skip this step. If there are errors, follow the prompts on screen to fix them.
 
 Step 3. Check Memory and CPU Allocation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Docker on Windows works by running a VM in the background (think of a VM as a “computer emulator”). This VM has a certain amount of memory allocated and WebODM can only use as much memory as it’s allocated.
-
-If you installed Docker Toolbox (see below if you installed Docker for Windows instead):
-
-1. Open the **VirtualBox Manager** application
-2. Right click the **default** VM and press **Close (ACPI Shutdown)** to stop the machine
-3. Right click the **default** VM and press **Settings...**
-4. Move the **Base Memory** slider from the **System** panel and allocate 60-70% of all available memory, optionally adding 50% of the available processors from the **Processor** tab also
-
-.. figure:: images/virtualboxsettings.png
-   :alt: Screenshot of VirtualBox Settings
-   :align: center
-
-*VirtualBox default VM settings*
-
-Then press **OK**, right click the **default** VM and press **Start**.
-
-If you installed Docker for Windows instead:
+Docker Desktop on Windows works by running a WSL(Window Subsystem Linux)2 or Hyper-V in the background (think of a WSL as a “linux emulator”). This VM has a certain amount of memory allocated and WebODM can only use as much memory as it’s allocated.
 
 1. Look in the system tray and right click the “white whale” icon.
 2. From the menu, press **Settings...**
